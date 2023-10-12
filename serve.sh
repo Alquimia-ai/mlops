@@ -1,0 +1,1 @@
+mlflow models serve -m models:/intent_classification_js/Production -p 1234
