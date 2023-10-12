@@ -16,11 +16,10 @@ services:
       - REDIS_HOST=redis
     depends_on:
       - db
-  jupyter-notebook:
-    image: mlops-alquimia:latest
+  intent_model:
+    image: intent-model:latest
     ports:
-      - '8888:8888'
-    command: start-notebook.sh --NotebookApp.iopub_data_rate_limit=1e10
+      - '1234:1234'
   db:
     image: postgres:latest
     container_name: db

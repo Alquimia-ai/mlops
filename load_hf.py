@@ -7,7 +7,6 @@ import torch
 import mlflow.pyfunc
 
 class HuggingFaceWrapper(mlflow.pyfunc.PythonModel):
-
     def load_context(cls, context):
         cls.model = AutoModelForSequenceClassification.from_pretrained(context.artifacts["model"])
         cls.tokenizer = AutoTokenizer.from_pretrained(context.artifacts["tokenizer"])

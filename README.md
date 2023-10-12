@@ -13,3 +13,7 @@ curl http://127.0.0.1:1234/invocations -H 'Content-Type: application/json' -d '{
   ]
 }'
 ```
+
+### Last stable version run is
+
+runs:/f58d52138c70487d901d6a99b201aeab/hf_model_custom
