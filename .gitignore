@@ -2,3 +2,4 @@
 data
 mlflow
 hf_model
+__pycache__
