@@ -31,7 +31,7 @@ class HuggingFaceWrapper(mlflow.pyfunc.PythonModel):
         return predicted_classes
 
 
-model_name = "alexFiorenza/intent_classification_js"  # replace with your model's identifier on Hugging Face
+model_name = "alexFiorenza/medusa_retail_intent"  # replace with your model's identifier on Hugging Face
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
 

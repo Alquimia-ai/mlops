@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/alexfiorenza/Documents/software_development/projects/alquimia/mlops/mlruns/0/5bd4c25a72c34cc599305a5ade5c4b29/artifacts
+end_time: 1697232099133
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5bd4c25a72c34cc599305a5ade5c4b29
+run_name: mysterious-conch-866
+run_uuid: 5bd4c25a72c34cc599305a5ade5c4b29
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697232095934
+status: 3
+tags: []
+user_id: alexfiorenza

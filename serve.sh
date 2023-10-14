@@ -1,3 +1,3 @@
 #!/bin/sh
-mlflow models serve -m mlruns/0/f58d52138c70487d901d6a99b201aeab/artifacts/hf_model_custom -h 127.0.0.1  -p 1234
+mlflow models serve -m mlruns/0/5bd4c25a72c34cc599305a5ade5c4b29/artifacts/hf_model_custom -h 127.0.0.1  -p 1234
 

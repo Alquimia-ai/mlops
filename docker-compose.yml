@@ -16,10 +16,6 @@ services:
       - REDIS_HOST=redis
     depends_on:
       - db
-  intent_model:
-    image: intent-model:latest
-    ports:
-      - '1234:1234'
   db:
     image: postgres:latest
     container_name: db
