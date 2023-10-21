@@ -13,7 +13,6 @@ services:
       - POSTGRE_PASSWORD=somepassword
       - POSTGRE_PORT=5432
       - POSTGRE_HOST=db
-      - REDIS_HOST=redis
     depends_on:
       - db
   db:
@@ -28,4 +27,3 @@ services:
 
 volumes:
   postgres_data:
-  mlflow:

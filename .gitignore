@@ -3,3 +3,5 @@ data
 mlflow
 hf_model
 __pycache__
+mlruns
+.env
