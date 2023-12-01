@@ -6,17 +6,21 @@ import torch
 # Define the Custom PyFunc Model
 import mlflow.pyfunc
 
+
 class HuggingFaceWrapper(mlflow.pyfunc.PythonModel):
     def load_context(cls, context):
-        cls.model = AutoModelForSequenceClassification.from_pretrained(context.artifacts["model"])
-        cls.tokenizer = AutoTokenizer.from_pretrained(context.artifacts["tokenizer"])
+        cls.model = AutoModelForSequenceClassification.from_pretrained(
+            context.artifacts["model"])
+        cls.tokenizer = AutoTokenizer.from_pretrained(
+            context.artifacts["tokenizer"])
 
     def predict(self, context, model_input):
         # Extract text data from the DataFrame
         texts = model_input["text"].tolist()
 
         # Tokenize
-        inputs = self.tokenizer(texts, return_tensors="pt", truncation=True, padding=True)
+        inputs = self.tokenizer(
+            texts, return_tensors="pt", truncation=True, padding=True)
 
         # Get model's outputs
         with torch.no_grad():
@@ -27,11 +31,12 @@ class HuggingFaceWrapper(mlflow.pyfunc.PythonModel):
 
         # Get the predicted class label
         predicted_classes = probabilities.argmax(dim=1).tolist()
-        
+
         return predicted_classes
 
 
-model_name = "alexFiorenza/medusa_retail_intent"  # replace with your model's identifier on Hugging Face
+# replace with your model's identifier on Hugging Face
+model_name = "alexFiorenza/medusa_retail_intent"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
@@ -46,6 +51,6 @@ with mlflow.start_run() as run:
         "tokenizer": "hf_model"
     }
 
-    model_info=mlflow.pyfunc.log_model(artifact_path="hf_model_custom",
-                            python_model=HuggingFaceWrapper(),
-                            artifacts=artifacts)
+    model_info = mlflow.pyfunc.log_model(artifact_path="hf_model_custom",
+                                         python_model=HuggingFaceWrapper(),
+                                         artifacts=artifacts)
