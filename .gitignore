@@ -5,3 +5,7 @@ hf_model
 __pycache__
 mlruns
 .env
+venv
+.ipynb_checkpoints
+visual/
+data_output/
